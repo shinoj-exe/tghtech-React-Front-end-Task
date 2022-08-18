@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './QuotePage.css'
 
 
-const QuotePage = () => {
+const QuotePage = ({bookmarks,setBookmarks}) => {
 
   const [quote,setQuote]=useState('The human spirit must prevail over technology');
   const [author,setAuthor]=useState('-Albert Einstein');
@@ -25,6 +25,13 @@ const QuotePage = () => {
     setAuthor(data.author);
   };
 
+  const addToBookmark=(quote,author)=>{
+    console.log(quote,author);
+    setBookmarks([
+      ...bookmarks,{quote:quote,author:author}
+    ])
+  }
+
 
   return (
     <div className='quote-page'>
@@ -32,9 +39,10 @@ const QuotePage = () => {
         <div className="quote-text" id='quote'>" {quote} "</div>
         <div className="quote-author">-{author}</div>
         <div className="bookmark-btn">
-            <i class="fa fa-bookmark"></i>
+            <i class="fa fa-bookmark"  onClick={()=>{addToBookmark(quote,author)}}></i>
         </div>
       </div>
+
       <div className="next-quote">
         <button id='next-btn' className='next-btn'  onClick={()=>{getQuote()}}>Next Quote</button>
       </div>

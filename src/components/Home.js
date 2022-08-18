@@ -3,12 +3,11 @@ import QuotePage from './QuotePage';
 import './Home.css';
 
 
-const Home = () => {
+const Home = ({bookmarks,setBookmarks}) => {
   return (
     <div className='homePage'>
       <h1>Home</h1>
-      <QuotePage ></QuotePage>
-
+      <QuotePage bookmarks={bookmarks} setBookmarks={setBookmarks}></QuotePage>
     </div>
   )
 }
