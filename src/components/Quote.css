@@ -1,0 +1,23 @@
+.quote{
+    width: 75%;
+    min-height: 250px;
+    background: #D05252;
+    border-radius: 30px;
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    color: #fff;
+    font-size: 25px;
+    position: relative;
+}
+.quote-author{
+    font-size: 18px;
+}
+.bookmark-btn{
+    cursor: pointer;
+    position: absolute;
+    bottom: 15px;
+    right: 40px;
+}
