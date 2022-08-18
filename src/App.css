@@ -6,6 +6,7 @@
 
 .App{
     display: flex;
+    
 }
 .homePage-sections{
     flex: 1;
@@ -18,4 +19,5 @@
     .App{
       flex-direction: column;  
     }
+
 }

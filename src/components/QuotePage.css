@@ -39,11 +39,12 @@
     border-radius: 30px;
 }
 .quote-tags select{
+    cursor: pointer;
     width: 100%;
     font-size: 18px;
     background: none;
     border: none;
-    
+
 }
 .quote-tags select:focus{
     outline: none;
