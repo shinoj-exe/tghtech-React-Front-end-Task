@@ -30,3 +30,9 @@
 .next-quote button{
     cursor: pointer;
 }
+
+.quote-tags{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}

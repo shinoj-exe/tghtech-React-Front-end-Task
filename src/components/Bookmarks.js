@@ -8,6 +8,7 @@ const Bookmarks = ({bookmarks,setBookmarks}) => {
       {
         bookmarks.map(bookmark=>(
           <div className="quote-bookmark">
+            
             <div className="quote--bookmark" id='quoteBookmark'>{bookmark.quote}</div>
             <div className="quote-author-bookmark">-{bookmark.author}</div>
           </div>

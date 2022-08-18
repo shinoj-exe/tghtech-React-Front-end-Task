@@ -1,21 +1,27 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import './QuotePage.css'
 
 
 const QuotePage = ({bookmarks,setBookmarks}) => {
 
+  const [tags,setTags]=useState([]);
+
+  useEffect(()=>{
+    const getTags = async()=>{
+    const res = await fetch("http://quotable.io/tags");
+    const tagData=await res.json();
+    console.log(tagData);
+    setTags(tagData);
+
+    }
+    getTags();
+  },[]);
+
   const [quote,setQuote]=useState('The human spirit must prevail over technology');
   const [author,setAuthor]=useState('-Albert Einstein');
 
 
-  // function getQuote(){
-  //   fetch("http.//quotable.io/random")
-  //   .then(res=>res.json())
-  //   .then(data=>{
-  //     console.log(data);
-  //     setQuote(data.content);
-  //   })
-  // }
+
 
   const getQuote= async ()=>{
     const response = await fetch("http://quotable.io/random");
@@ -41,6 +47,17 @@ const QuotePage = ({bookmarks,setBookmarks}) => {
         <div className="bookmark-btn">
             <i class="fa fa-bookmark"  onClick={()=>{addToBookmark(quote,author)}}></i>
         </div>
+      </div>
+
+      <div className="quote-tags">
+        <select name="tags" id="tags">
+          <option >--Tags--</option>
+          {
+            tags.map((tag)=>(
+              <option key={tag._id}>{tag.name}</option>
+            ))
+          }
+        </select>
       </div>
 
       <div className="next-quote">
