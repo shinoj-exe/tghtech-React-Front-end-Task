@@ -54,7 +54,7 @@ const QuotePage = ({bookmarks,setBookmarks}) => {
           <option >--Tags--</option>
           {
             tags.map((tag)=>(
-              <option key={tag._id}>{tag.name}</option>
+              <option key={tag._id} value={tag.name}>{tag.name}</option>
             ))
           }
         </select>
