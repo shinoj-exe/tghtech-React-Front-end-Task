@@ -29,8 +29,8 @@ const QuotePage = () => {
   return (
     <div className='quote-page'>
       <div className="quote-box">
-        <div className="quote-text" id='quote'>{quote}</div>
-        <div className="quote-author">{author}</div>
+        <div className="quote-text" id='quote'>" {quote} "</div>
+        <div className="quote-author">-{author}</div>
         <div className="bookmark-btn">
             <i class="fa fa-bookmark"></i>
         </div>
