@@ -1,9 +1,9 @@
-.quote{
-    width: 75%;
+.quote-box{
+    min-width: 500px;
     min-height: 250px;
     background: #D05252;
     border-radius: 30px;
-    margin: 40px;
+    margin: 40px 0 40px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,4 +20,11 @@
     position: absolute;
     bottom: 15px;
     right: 40px;
+}
+.next-quote{
+    display: flex;
+    justify-content: center;
+}
+.next-quote button{
+    cursor: pointer;
 }
