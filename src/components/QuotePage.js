@@ -5,6 +5,7 @@ import './QuotePage.css'
 const QuotePage = ({bookmarks,setBookmarks}) => {
 
   const [tags,setTags]=useState([]);
+  const [tag,setTag]=useState('');
 
   useEffect(()=>{
     const getTags = async()=>{
@@ -17,14 +18,23 @@ const QuotePage = ({bookmarks,setBookmarks}) => {
     getTags();
   },[]);
 
+  const handleTag=(event)=>{
+    const tagSelected=event.target.value;
+    console.log(tagSelected);
+    setTag(tagSelected)
+  }
+
   const [quote,setQuote]=useState('The human spirit must prevail over technology');
   const [author,setAuthor]=useState('-Albert Einstein');
 
 
 
 
+
   const getQuote= async ()=>{
-    const response = await fetch("http://quotable.io/random");
+    // const response = await fetch("http://quotable.io/random");
+    const response = await fetch(`http://quotable.io/random?tags=${tag}`);
+
     const data = await response.json();
     console.log(data);
     setQuote(data.content);
@@ -50,7 +60,7 @@ const QuotePage = ({bookmarks,setBookmarks}) => {
       </div>
 
       <div className="quote-tags">
-        <select name="tags" id="tags">
+        <select name="tags" id="tags" onChange={(e)=>handleTag(e)}>
           <option >--Tags--</option>
           {
             tags.map((tag)=>(
