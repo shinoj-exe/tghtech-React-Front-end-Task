@@ -34,7 +34,7 @@ const QuotePage = ({bookmarks,setBookmarks}) => {
   const getQuote= async ()=>{
     // const response = await fetch("http://quotable.io/random");
     const response = await fetch(`http://quotable.io/random?tags=${tag}`);
-
+    
     const data = await response.json();
     console.log(data);
     setQuote(data.content);
