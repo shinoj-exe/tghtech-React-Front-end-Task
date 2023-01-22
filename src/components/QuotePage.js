@@ -9,7 +9,7 @@ const QuotePage = ({bookmarks,setBookmarks}) => {
 
   useEffect(()=>{
     const getTags = async()=>{
-    const res = await fetch("http://quotable.io/tags");
+    const res = await fetch("https://quotable.io/tags");
     const tagData=await res.json();
     console.log(tagData);
     setTags(tagData);
